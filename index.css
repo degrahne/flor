@@ -53,54 +53,57 @@ body {
 /* Flor */
 .flower {
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
 }
 
 /* Pétalos */
 .petal {
     position: absolute;
-    width: 75px;
-    height: 95px;
-    background: linear-gradient(to top, #ffcc00, #ffeb3b, #fff9c4);
-    border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
-    top: 50px;
-    left: 62px;
+    width: 80px;
+    height: 100px;
+    background: linear-gradient(to top, #ffc107, #ffeb3b, #fff59d);
+    border-radius: 50% 50% 45% 45% / 65% 65% 35% 35%;
+    top: 50%;
+    left: 50%;
+    margin-left: -40px;   /* mitad del ancho */
+    margin-top: -100px;   /* altura completa hacia arriba */
     transform-origin: 50% 100%;
     box-shadow: 
-        inset 0 -12px 20px rgba(255, 140, 0, 0.35),
-        0 6px 18px rgba(0, 0, 0, 0.25);
+        inset 0 -10px 18px rgba(255, 140, 0, 0.3),
+        0 5px 15px rgba(0, 0, 0, 0.2);
     opacity: 0;
 }
 
 /* Posiciones de los 8 pétalos */
-.petal-1 { transform: rotate(0deg);   animation: bloom 1.6s 0.1s ease-out forwards; }
-.petal-2 { transform: rotate(45deg);  animation: bloom 1.6s 0.2s ease-out forwards; }
-.petal-3 { transform: rotate(90deg);  animation: bloom 1.6s 0.3s ease-out forwards; }
-.petal-4 { transform: rotate(135deg); animation: bloom 1.6s 0.4s ease-out forwards; }
-.petal-5 { transform: rotate(180deg); animation: bloom 1.6s 0.5s ease-out forwards; }
-.petal-6 { transform: rotate(225deg); animation: bloom 1.6s 0.6s ease-out forwards; }
-.petal-7 { transform: rotate(270deg); animation: bloom 1.6s 0.7s ease-out forwards; }
-.petal-8 { transform: rotate(315deg); animation: bloom 1.6s 0.8s ease-out forwards; }
+.petal-1 { transform: rotate(0deg);   animation: bloom 1.5s 0.1s ease-out forwards; }
+.petal-2 { transform: rotate(45deg);  animation: bloom 1.5s 0.2s ease-out forwards; }
+.petal-3 { transform: rotate(90deg);  animation: bloom 1.5s 0.3s ease-out forwards; }
+.petal-4 { transform: rotate(135deg); animation: bloom 1.5s 0.4s ease-out forwards; }
+.petal-5 { transform: rotate(180deg); animation: bloom 1.5s 0.5s ease-out forwards; }
+.petal-6 { transform: rotate(225deg); animation: bloom 1.5s 0.6s ease-out forwards; }
+.petal-7 { transform: rotate(270deg); animation: bloom 1.5s 0.7s ease-out forwards; }
+.petal-8 { transform: rotate(315deg); animation: bloom 1.5s 0.8s ease-out forwards; }
 
-/* Centro */
+/* Centro perfectamente centrado */
 .center {
     position: absolute;
-    width: 58px;
-    height: 58px;
-    background: radial-gradient(circle, #8b4513 20%, #5d2e0c 100%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at 40% 40%, #a0522d, #5d2e0c 70%);
     border-radius: 50%;
-    top: 71px;
-    left: 71px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
     box-shadow: 
-        inset 0 0 18px rgba(0, 0, 0, 0.55),
-        0 0 25px rgba(255, 215, 0, 0.45);
+        inset 0 0 15px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 215, 0, 0.4);
     opacity: 0;
-    animation: bloomCenter 0.9s 1.1s ease-out forwards;
+    animation: bloomCenter 0.8s 1s ease-out forwards;
 }
 
 /* Tallo */
@@ -146,11 +149,11 @@ body {
 @keyframes bloom {
     0% {
         opacity: 0;
-        transform: rotate(var(--angle, 0deg)) scale(0.15);
+        transform: rotate(var(--angle, 0deg)) scale(0.2);
     }
-    60% {
+    70% {
         opacity: 1;
-        transform: rotate(var(--angle, 0deg)) scale(1.12);
+        transform: rotate(var(--angle, 0deg)) scale(1.1);
     }
     100% {
         opacity: 1;
@@ -158,7 +161,7 @@ body {
     }
 }
 
-/* Aplicamos el ángulo correcto a cada pétalo */
+/* Ángulos */
 .petal-1 { --angle: 0deg; }
 .petal-2 { --angle: 45deg; }
 .petal-3 { --angle: 90deg; }
@@ -167,6 +170,7 @@ body {
 .petal-6 { --angle: 225deg; }
 .petal-7 { --angle: 270deg; }
 .petal-8 { --angle: 315deg; }
+
 
 @keyframes bloomCenter {
     0% {
