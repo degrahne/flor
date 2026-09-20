@@ -139,7 +139,7 @@ body {
 }
 
 .leaf-right {
-    bottom: 155px;          /* subida un poco para que no se vea tan pegada */
+    bottom: 100px;          /* subida un poco para que no se vea tan pegada */
     left: 50%;
     transform-origin: left center;
     animation: growLeafRight 1s 1.6s ease-out forwards;
